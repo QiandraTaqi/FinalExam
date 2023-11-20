@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 09, 2023 at 02:55 PM
+-- Generation Time: Nov 20, 2023 at 01:38 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `shop`
+-- Database: `exam`
 --
 
 -- --------------------------------------------------------
@@ -35,6 +35,13 @@ CREATE TABLE `cart` (
   `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'unpaid',
   `file_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `user_id`, `product_id`, `quantity`, `status`, `file_path`) VALUES
+(82, 12, 1, 1, 'unpaid', NULL);
 
 -- --------------------------------------------------------
 
@@ -55,18 +62,18 @@ CREATE TABLE `catalog` (
 --
 
 INSERT INTO `catalog` (`id`, `product_name`, `image_url`, `description`, `price`) VALUES
-(1, 'Runner Prides', 'upload/adidas01.png', 'This is an example product description.', '100'),
-(3, 'Tiger Ally', 'upload/adidas02.png', 'This is an example product description.', '100'),
-(4, 'California 05', 'upload/adidas03.png', 'This is an example product description.', '100.000'),
-(5, 'Nike Jordan', 'upload/adidas04.png', 'This is an example product description.', '100.000'),
-(6, 'Adidas Alvarado', 'upload/adidas05.png', 'This is an example product description.', '100.000'),
-(7, 'Mexico 66', 'upload/tiger01.png', 'This is an example product description.', '100.000'),
-(8, 'NVM09', 'upload/tiger02.png', 'This is an example product description.', '100.000'),
-(9, 'Skechers', 'upload/tiger03.png', 'This is an example product description.', '100.000'),
-(10, 'Ventella', 'upload/tiger04.png', 'This is an example product description.', '100'),
-(12, 'Fire Jordan', 'upload/1.png', 'BLA', '100'),
-(13, 'Afterr Zeroo', 'upload/2.png', 'BLA', '100'),
-(14, 'The Gray One', 'upload/3.png', 'a', '100');
+(1, 'Premium Couch', 'upload/sofa.png', 'This is an example product description.', '100.000'),
+(3, 'Deluxe Sleeper Couch', 'upload/sofa2.png', 'This is an example product description.', '100.000'),
+(4, 'Premium Sleeper Couch', 'upload/sofa3.png', 'This is an example product description.', '100.000'),
+(5, 'Wooden Dining Table', 'upload/table2.png', 'This is an example product description.', '100.000'),
+(6, 'Wodden Coffe Table', 'upload/table3.png', 'This is an example product description.', '100.000'),
+(7, 'Sturdy Table', 'upload/table.png', 'This is an example product description.', '100.000'),
+(8, 'Adjustable Chair', 'upload/chair.png', 'This is an example product description.', '100.000'),
+(9, 'Rotating Chair', 'upload/chair2.png', 'This is an example product description.', '100.000'),
+(10, 'Fancy Office Chair', 'upload/chair3.png', 'This is an example product description.', '100.000'),
+(12, 'Comfort Bed', 'upload/bed.png', 'BLA', '100.000'),
+(13, 'Simple Bed', 'upload/bed2.png', 'BLA', '100.000'),
+(14, 'Cozy Bed', 'upload/bed3.png', 'a', '100.000');
 
 -- --------------------------------------------------------
 
@@ -81,6 +88,13 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `address` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `address`) VALUES
+(12, 'temulawak', 'azurelenz123@gmail.com', '$2y$10$WZubO3Y4pNOTljzbwWYPl.muINmXjm6MyQyGUb9BQ6sng/bKjh3q.', 'bekasi');
 
 --
 -- Indexes for dumped tables
@@ -115,7 +129,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `catalog`
@@ -127,7 +141,7 @@ ALTER TABLE `catalog`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
